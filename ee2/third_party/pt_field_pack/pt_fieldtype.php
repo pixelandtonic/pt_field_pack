@@ -296,6 +296,11 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	 */
 	function replace_tag($data, $params = array(), $tagdata = FALSE)
 	{
+		if (! isset($this->settings['options']) || ! $this->settings['options'])
+		{
+			return '';
+		}
+
 		if (! $tagdata)
 		{
 			return $this->ul($data, $params);
@@ -304,11 +309,13 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 		$this->prep_field_data($data);
 		$r = '';
 
-		if ($this->settings['options'] AND $data)
+		if ($this->settings['options'] && $data)
 		{
 			// optional sorting
-			if ($sort = strtolower($params['sort']))
+			if (isset($params['sort']) && $params['sort'])
 			{
+				$sort = strtolower($params['sort']);
+
 				if ($sort == 'asc')
 				{
 					sort($data);
@@ -324,7 +331,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 
 			foreach($data as $option_name)
 			{
-				if (($option = $this->_find_option($option_name, $field_settings['options'])) !== FALSE)
+				if (($option = $this->_find_option($option_name, $this->settings['options'])) !== FALSE)
 				{
 					// copy $tagdata
 					$option_tagdata = $tagdata;
@@ -340,7 +347,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 				}
 			}
 
-			if ($params['backspace'])
+			if (isset($params['backspace']) && $params['backspace'])
 			{
 				$r = substr($r, 0, -$params['backspace']);
 			}
@@ -357,7 +364,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	function ul($data, $params = array())
 	{
 		return "<ul>\n"
-		     .   $this->display_tag($data, $params, "  <li>{option}</li>\n")
+		     .   $this->replace_tag($data, $params, "  <li>{option}</li>\n")
 		     . '</ul>';
 	}
 
@@ -367,7 +374,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	function ol($data, $params = array())
 	{
 		return "<ol>\n"
-		     .   $this->display_tag($data, $params, "  <li>{option}</li>\n")
+		     .   $this->replace_tag($data, $params, "  <li>{option}</li>\n")
 		     . '</ol>';
 	}
 
@@ -378,7 +385,15 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	 */
 	function all_options($data, $params = array(), $tagdata = FALSE, $options = FALSE, $iterator_count = 0)
 	{
+		if (! $tagdata)
+		{
+			return "<ul>\n"
+			     .   $this->all_options($data, $params, "  <li>{option}</li>\n")
+			     . "</ul>";
+		}
+
 		PT_Multi_Fieldtype::prep_field_data($data);
+
 		$r = '';
 
 		if ($options === FALSE)
@@ -389,8 +404,10 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 		if ($options)
 		{
 			// optional sorting
-			if ($sort = strtolower($params['sort']))
+			if (isset($params['sort']) && $params['sort'])
 			{
+				$sort = strtolower($params['sort']);
+
 				if ($sort == 'asc')
 				{
 					asort($options);
@@ -420,7 +437,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 					// simple var swaps
 					$option_tagdata = $this->EE->TMPL->swap_var_single('option', $option, $option_tagdata);
 					$option_tagdata = $this->EE->TMPL->swap_var_single('option_name', $option_name, $option_tagdata);
-					$option_tagdata = $this->EE->TMPL->swap_var_single('selected', (in_array($option_name, $field_data) ? 1 : 0), $option_tagdata);
+					$option_tagdata = $this->EE->TMPL->swap_var_single('selected', (in_array($option_name, $data) ? 1 : 0), $option_tagdata);
 
 					// parse {switch} and {count} tags
 					$this->parse_iterators($option_tagdata);
@@ -429,7 +446,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 				}
 			}
 
-			if ($params['backspace'])
+			if (isset($params['backspace']) && $params['backspace'])
 			{
 				$r = substr($r, 0, -$params['backspace']);
 			}
@@ -447,7 +464,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	{
 		$this->prep_field_data($data);
 
-		return (isset($params['option']) AND in_array($params['option'], $field_data)) ? 1 : 0;
+		return (isset($params['option']) AND in_array($params['option'], $data)) ? 1 : 0;
 	}
 
 }
