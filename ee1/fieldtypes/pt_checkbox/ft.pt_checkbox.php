@@ -19,7 +19,7 @@ class Pt_checkbox extends Fieldframe_Fieldtype {
 	 */
 	var $info = array(
 		'name'     => 'PT Checkbox',
-		'version'  => '1.0',
+		'version'  => PT_FIELD_PACK_VER,
 		'docs_url' => 'http://pixelandtonic.com/fieldframe/docs/ff-checkbox',
 		'no_lang'  => TRUE
 	);

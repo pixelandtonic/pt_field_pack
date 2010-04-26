@@ -1,5 +1,14 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+if (! defined('PT_FIELD_PACK_VER'))
+{
+	// get the version from config.php
+	require PATH_THIRD.'pt_field_pack/config.php';
+	define('PT_FIELD_PACK_VER', $config['version']);
+}
+
+
 /**
  * PT Fieldtype Base Class
  *

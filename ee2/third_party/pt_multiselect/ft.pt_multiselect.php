@@ -18,7 +18,7 @@ class Pt_multiselect_ft extends PT_Multi_Fieldtype {
 
 	var $info = array(
 		'name'     => 'PT Multiselect',
-		'version'  => '1.0'
+		'version'  => PT_FIELD_PACK_VER
 	);
 
 	var $class = 'pt_multiselect';

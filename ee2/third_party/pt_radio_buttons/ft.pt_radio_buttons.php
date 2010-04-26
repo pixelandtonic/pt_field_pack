@@ -18,7 +18,7 @@ class Pt_radio_buttons_ft extends PT_Multi_Fieldtype {
 
 	var $info = array(
 		'name'     => 'PT Radio Buttons',
-		'version'  => '1.0'
+		'version'  => PT_FIELD_PACK_VER
 	);
 
 	var $class = 'pt_radio_buttons';

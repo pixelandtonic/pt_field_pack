@@ -18,7 +18,7 @@ class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 
 	var $info = array(
 		'name'     => 'PT Dropdown',
-		'version'  => '1.0'
+		'version'  => PT_FIELD_PACK_VER
 	);
 
 	var $class = 'pt_dropdown';

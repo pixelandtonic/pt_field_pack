@@ -19,7 +19,7 @@ class Pt_checkbox_group extends Fieldframe_Multi_Fieldtype {
 	 */
 	var $info = array(
 		'name'     => 'PT Checkbox Group',
-		'version'  => '1.0',
+		'version'  => PT_FIELD_PACK_VER,
 		'docs_url' => 'http://pixelandtonic.com/fieldframe/docs/ff-checkbox-group',
 		'no_lang'  => TRUE
 	);

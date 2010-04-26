@@ -19,7 +19,7 @@ class Pt_select extends Fieldframe_Multi_Fieldtype {
 	 */
 	var $info = array(
 		'name'     => 'PT Select',
-		'version'  => '1.0',
+		'version'  => PT_FIELD_PACK_VER,
 		'desc'     => 'A better drop-down list',
 		'docs_url' => 'http://pixelandtonic.com/fieldframe/docs/ff-select',
 		'no_lang'  => TRUE
