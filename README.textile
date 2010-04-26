@@ -21,3 +21,14 @@ h3. Installation Instructions
 # Upload all of the folders within @ee2/third_party/@ to @system/expressionengine/third_party/@
 # Enable the PT Field Pack extension in Add-Ons → Extensions
 # Enable whichever fieldtypes you wish to use in Add-Ons → Fieldtypes
+
+h3. Documentation
+
+Most of the bundled fieldtype documentation at http://pixelandtonic.com/fieldframe/docs will apply to these, but note that:
+
+* "FF Checkbox":http://pixelandtonic.com/fieldframe/docs/ff-checkbox and "FF Checkbox Group":http://pixelandtonic.com/fieldframe/docs/ff-checkbox-group are now combined into PT Checkboxes
+* "FF Select":http://pixelandtonic.com/fieldframe/docs/ff-select has been renamed to PT Dropdown
+* "FF Radio Group":http://pixelandtonic.com/fieldframe/docs/ff-radio-group has been renamed to PT Radio Buttons
+* "FF Multi-select":http://pixelandtonic.com/fieldframe/docs/ff-multi-select has been renamed to PT Multiselect
+
+These changes have been made to more closely resemble the fieldtypes that come bundled with EE2.
