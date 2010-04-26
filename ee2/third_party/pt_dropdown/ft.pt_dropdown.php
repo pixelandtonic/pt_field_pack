@@ -3,7 +3,7 @@
 
 if (! class_exists('PT_Fieldtype'))
 {
-	require PATH_THIRD.'pt__fieldtype/pt_fieldtype.php';
+	require PATH_THIRD.'pt_field_pack/pt_fieldtype.php';
 }
 
 
@@ -35,7 +35,7 @@ class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 	{
 		if (! class_exists('FF2EE2'))
 		{
-			require PATH_THIRD.'pt__fieldtype/ff2ee2/ff2ee2.php';
+			require PATH_THIRD.'pt_field_pack/ff2ee2/ff2ee2.php';
 		}
 
 		new FF2EE2(array('ff_select', 'pt_dropdown'));
