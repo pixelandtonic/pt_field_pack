@@ -1,0 +1,1 @@
+<?php include_once PATH_THIRD.'pt__fieldtype/language/english/lang.pt_fieldtype.php';
