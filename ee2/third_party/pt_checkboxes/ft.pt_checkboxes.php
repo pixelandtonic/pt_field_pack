@@ -90,4 +90,19 @@ class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 		return $this->save($data);
 	}
 
+	// --------------------------------------------------------------------
+
+	/**
+	 * Replace Tag
+	 */
+	function replace_tag($data, $params = array(), $tagdata = FALSE)
+	{
+		if (! isset($this->settings['options']) || ! $this->settings['options'] || count($this->settings['options']) < 2)
+		{
+			return $data;
+		}
+
+		return parent::replace_tag($data, $params, $tagdata);
+	}
+
 }

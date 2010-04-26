@@ -298,7 +298,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	{
 		if (! isset($this->settings['options']) || ! $this->settings['options'])
 		{
-			return '';
+			return $data;
 		}
 
 		if (! $tagdata)
