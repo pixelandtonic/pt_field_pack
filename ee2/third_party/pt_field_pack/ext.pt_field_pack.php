@@ -21,7 +21,7 @@ class Pt_field_pack_ext {
 	var $name = 'PT Field Pack';
 	var $version = PT_FIELD_PACK_VER;
 	var $settings_exist = 'n';
-	//var $docs_url = 'http://pixelandtonic.com/fieldpack';
+	var $docs_url = 'http://pixelandtonic.com/fieldpack';
 
 	/**
 	 * Extension Constructor
