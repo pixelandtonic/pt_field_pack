@@ -200,12 +200,12 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	/**
 	 * Display Cell Settings
 	 */
-	function display_cell_settings($cell_settings)
+	function display_cell_settings($data)
 	{
 		// load the language file
 		$this->EE->lang->loadfile($this->class);
 
-		$options = isset($this->settings['options']) ? $this->settings['options'] : array();
+		$options = isset($data['options']) ? $data['options'] : array();
 
 		return array(
 			array(
