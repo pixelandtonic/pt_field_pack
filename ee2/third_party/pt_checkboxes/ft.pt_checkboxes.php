@@ -62,9 +62,9 @@ class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 		foreach($this->settings['options'] as $option_name => $option_label)
 		{
 			$selected = in_array($option_name, $data) ? 1 : 0;
-			$r .= '<label style="display:block; float:left; margin:3px 15px 7px 0; white-space:nowrap;">'
-			    . form_checkbox($field_name.'[]', $option_name, $selected)
-			    . NBS . $option_label
+			$r .= '<label>'
+			    .   form_checkbox($field_name.'[]', $option_name, $selected)
+			    .   NBS . $option_label
 			    . '</label> ';
 		}
 		$r .= '<div style="clear:left"></div>';
