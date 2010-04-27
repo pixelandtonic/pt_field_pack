@@ -23,8 +23,6 @@ class Pt_radio_buttons_ft extends PT_Multi_Fieldtype {
 
 	var $class = 'pt_radio_buttons';
 
-	var $settings_label = 'radio_options_label';
-
 	// --------------------------------------------------------------------
 
 	/**

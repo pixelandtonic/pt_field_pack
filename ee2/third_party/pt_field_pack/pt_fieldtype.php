@@ -172,7 +172,6 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 		'backspace' => '0'
 	);
 
-	var $settings_label = 'field_list_items';
 	var $total_option_levels = 1;
 
 	// --------------------------------------------------------------------
@@ -189,7 +188,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 		$input_name = $this->class.'_options';
 
 		$this->EE->table->add_row(
-			lang($this->settings_label, $input_name) . '<br />'
+			lang($this->class.'_options', $input_name) . '<br />'
 			. lang('field_list_instructions') . '<br /><br />'
 			. lang('option_setting_examples'),
 
@@ -209,7 +208,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 
 		return array(
 			array(
-				lang('options'),
+				lang($this->class.'_options'),
 				'<textarea name="options" rows="4">'.$this->options_setting($options).'</textarea>'
 			)
 		);

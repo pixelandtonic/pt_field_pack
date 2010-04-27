@@ -23,8 +23,6 @@ class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 
 	var $class = 'pt_checkboxes';
 
-	var $settings_label = 'checkbox_options_label';
-
 	// --------------------------------------------------------------------
 
 	/**
