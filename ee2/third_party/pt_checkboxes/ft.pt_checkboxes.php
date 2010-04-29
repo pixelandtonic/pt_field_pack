@@ -50,6 +50,21 @@ class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 	// --------------------------------------------------------------------
 
 	/**
+	 * Save Cell Settings
+	 */
+	function save_cell_settings($settings)
+	{
+		if (! $settings['options'])
+		{
+			return array('options' => array('y' => ''));
+		}
+
+		return parent::save_cell_settings($settings);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
 	 * Display Field
 	 */
 	function _display_field($data, $field_name)
