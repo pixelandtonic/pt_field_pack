@@ -209,7 +209,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 		return array(
 			array(
 				lang($this->class.'_options'),
-				'<textarea name="options" rows="4">'.$this->options_setting($options).'</textarea>'
+				'<textarea class="matrix-textarea" name="options" rows="4">'.$this->options_setting($options).'</textarea>'
 			)
 		);
 	}
