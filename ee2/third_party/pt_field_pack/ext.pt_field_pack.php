@@ -123,20 +123,12 @@ class Pt_field_pack_ext {
 		// iterate through each field
 		foreach($this->_get_fields() as $field)
 		{
-			$data = $row['field_id_'.$field['field_id']];
-
-			// are there any related entries, and is the tag even being used here?
-			if ($data && strpos($tagdata, LD.$field['field_name']) !== FALSE)
+			// is the tag even being used here?
+			if (strpos($tagdata, LD.$field['field_name']) !== FALSE)
 			{
-				if (! class_exists($field['class']))
-				{
-					require PATH_THIRD.$field['field_type'].'/ft.'.$field['field_type'].EXT;
-				}
-
-				$fieldtype = new $field['class'];
-				$fieldtype->settings = array_merge($row, $field['field_settings']);
-
+				$data = $row['field_id_'.$field['field_id']];
 				$offset = 0;
+
 				while (preg_match('/'.LD.$field['field_name'].'(:(\w+))?(\s+.*)?'.RD.'/sU', $tagdata, $matches, PREG_OFFSET_CAPTURE, $offset))
 				{
 					$tag_pos = $matches[0][1];
@@ -164,7 +156,19 @@ class Pt_field_pack_ext {
 					  ?  substr($tagdata, $tagdata_pos, $endtag_pos - $tagdata_pos)
 					  :  '';
 
-					$new_tagdata = call_user_func_array(array(&$fieldtype, $tag_func), array($data, $params, $field_tagdata));
+					// -------------------------------------------
+					//  Call the tag's method
+					// -------------------------------------------
+
+					if (! class_exists($field['class']))
+					{
+						include_once PATH_THIRD.$field['field_type'].'/ft.'.$field['field_type'].EXT;
+					}
+
+					$fieldtype = new $field['class'];
+					$fieldtype->settings = array_merge($row, $field['field_settings']);
+
+					$new_tagdata = $fieldtype->$tag_func($data, $params, $field_tagdata);
 
 					// update tagdata
 					$tagdata = substr($tagdata, 0, $tag_pos)
