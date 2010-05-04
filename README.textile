@@ -1,4 +1,4 @@
-h1. PT Field Pack for EE2
+h1. P&T Field Pack for EE2
 
 This is the collection of fieldtypes that come bundled with "FieldFrame":http://pixelandtonic.com/fieldframe, ported to ExpressionEngine 2.
 
@@ -19,7 +19,7 @@ h2. Prerequisites
 h2. Installation Instructions
 
 # Upload all of the folders within @ee2/third_party/@ to @system/expressionengine/third_party/@
-# Enable the PT Field Pack extension in Add-Ons → Extensions
+# Enable the P&T Field Pack extension in Add-Ons → Extensions
 # Enable whichever fieldtypes you wish to use in Add-Ons → Fieldtypes
 
 h2. Documentation

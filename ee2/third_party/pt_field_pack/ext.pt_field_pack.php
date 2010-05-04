@@ -10,15 +10,15 @@ if (! defined('PT_FIELD_PACK_VER'))
 
 
 /**
- * PT Field Pack Extension Class for ExpressionEngine 2
+ * P&T Field Pack Extension Class for ExpressionEngine 2
  *
- * @package   PT Field Pack
+ * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
  * @copyright Copyright (c) 2010 Pixel & Tonic, LLC
  */
 class Pt_field_pack_ext {
 
-	var $name = 'PT Field Pack';
+	var $name = 'P&T Field Pack';
 	var $version = PT_FIELD_PACK_VER;
 	var $settings_exist = 'n';
 	var $docs_url = 'http://pixelandtonic.com/fieldpack';
