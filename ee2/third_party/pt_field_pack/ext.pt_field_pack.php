@@ -139,7 +139,7 @@ class Pt_field_pack_ext {
 					$endtag_pos = strpos($tagdata, $endtag, $tagdata_pos);
 					$tag_func = (isset($matches[2][0]) && $matches[2][0]) ? $matches[2][0] : '';
 
-					if (! $tag_func || ! method_exists($fieldtype, $tag_func)) $tag_func = 'replace_tag';
+					if (! $tag_func || ! method_exists($field['class'], $tag_func)) $tag_func = 'replace_tag';
 
 					// get the params
 					$params = array();
