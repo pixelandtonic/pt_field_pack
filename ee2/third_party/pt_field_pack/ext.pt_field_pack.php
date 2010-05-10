@@ -137,7 +137,7 @@ class Pt_field_pack_ext {
 					$endtag = LD.'/'.$field['field_name'].(isset($matches[1][0]) ? $matches[1][0] : '').RD;
 					$endtag_len = strlen($endtag);
 					$endtag_pos = strpos($tagdata, $endtag, $tagdata_pos);
-					$tag_func = (isset($matches[2][0]) && $matches[2][0]) ? $matches[2][0] : '';
+					$tag_func = (isset($matches[2][0]) && $matches[2][0]) ? 'replace_'.$matches[2][0] : '';
 
 					if (! $tag_func || ! method_exists($field['class'], $tag_func)) $tag_func = 'replace_tag';
 

@@ -82,7 +82,7 @@ class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 	/**
 	 * Option Label
 	 */
-	function label($data)
+	function replace_label($data)
 	{
 		$this->prep_field_data($data);
 

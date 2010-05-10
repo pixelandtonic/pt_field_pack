@@ -360,7 +360,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	/**
 	 * Unordered List
 	 */
-	function ul($data, $params = array())
+	function replace_ul($data, $params = array())
 	{
 		return "<ul>\n"
 		     .   $this->replace_tag($data, $params, "  <li>{option}</li>\n")
@@ -370,7 +370,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	/**
 	 * Ordered List
 	 */
-	function ol($data, $params = array())
+	function replace_ol($data, $params = array())
 	{
 		return "<ol>\n"
 		     .   $this->replace_tag($data, $params, "  <li>{option}</li>\n")
@@ -382,7 +382,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	/**
 	 * All Options
 	 */
-	function all_options($data, $params = array(), $tagdata = FALSE, $options = FALSE, $iterator_count = 0)
+	function replace_all_options($data, $params = array(), $tagdata = FALSE, $options = FALSE, $iterator_count = 0)
 	{
 		if (! $tagdata)
 		{
@@ -459,7 +459,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	/**
 	 * Is Selected?
 	 */
-	function selected($data, $params = array())
+	function replace_selected($data, $params = array())
 	{
 		$this->prep_field_data($data);
 
