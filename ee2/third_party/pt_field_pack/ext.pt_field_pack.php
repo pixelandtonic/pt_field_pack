@@ -52,6 +52,7 @@ class Pt_field_pack_ext {
 			'class'    => 'Pt_field_pack_ext',
 			'hook'     => 'channel_entries_tagdata',
 			'method'   => 'channel_entries_tagdata',
+			'settings' => '',
 			'priority' => 10,
 			'version'  => $this->version,
 			'enabled'  => 'y'
