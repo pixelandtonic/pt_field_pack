@@ -62,11 +62,11 @@ class Pt_radio_buttons_ft extends PT_Multi_Fieldtype {
 
 		$r = '';
 
-		foreach($this->settings['options'] as $value => $option)
+		foreach($this->settings['options'] as $option_name => $option)
 		{
-			$selected = ($value == $data);
+			$selected = ($option_name == $data);
 			$r .= '<label>'
-			    .   form_radio($field_name, $value, $selected)
+			    .   form_radio($field_name, $option_name, $selected)
 			    .   NBS . $option
 			    . '</label>';
 		}
