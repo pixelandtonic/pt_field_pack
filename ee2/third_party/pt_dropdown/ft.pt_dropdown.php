@@ -8,7 +8,7 @@ if (! class_exists('PT_Fieldtype'))
 
 
 /**
- * PT Dropdown Class
+ * P&T Dropdown Class
  *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
@@ -17,7 +17,7 @@ if (! class_exists('PT_Fieldtype'))
 class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 
 	var $info = array(
-		'name'     => 'PT Dropdown',
+		'name'     => 'P&amp;T Dropdown',
 		'version'  => PT_FIELD_PACK_VER
 	);
 

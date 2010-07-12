@@ -8,7 +8,7 @@ if (! class_exists('PT_Fieldtype'))
 
 
 /**
- * PT Multi-select Class
+ * P&T Multi-select Class
  *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
@@ -17,7 +17,7 @@ if (! class_exists('PT_Fieldtype'))
 class Pt_multiselect_ft extends PT_Multi_Fieldtype {
 
 	var $info = array(
-		'name'     => 'PT Multiselect',
+		'name'     => 'P&amp;T Multiselect',
 		'version'  => PT_FIELD_PACK_VER
 	);
 

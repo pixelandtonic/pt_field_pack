@@ -8,7 +8,7 @@ if (! class_exists('PT_Fieldtype'))
 
 
 /**
- * PT Radio Buttons Class
+ * P&T Radio Buttons Class
  *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
@@ -17,7 +17,7 @@ if (! class_exists('PT_Fieldtype'))
 class Pt_radio_buttons_ft extends PT_Multi_Fieldtype {
 
 	var $info = array(
-		'name'     => 'PT Radio Buttons',
+		'name'     => 'P&amp;T Radio Buttons',
 		'version'  => PT_FIELD_PACK_VER
 	);
 

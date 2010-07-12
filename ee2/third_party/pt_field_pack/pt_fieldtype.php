@@ -10,7 +10,7 @@ if (! defined('PT_FIELD_PACK_VER'))
 
 
 /**
- * PT Fieldtype Base Class
+ * P&T Fieldtype Base Class
  *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
@@ -144,7 +144,7 @@ class PT_Fieldtype extends EE_Fieldtype {
 
 
 /**
- * PT Multi Fieldtype Base Class
+ * P&T Multi Fieldtype Base Class
  * 
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>

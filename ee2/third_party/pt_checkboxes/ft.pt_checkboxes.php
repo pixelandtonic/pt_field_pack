@@ -8,7 +8,7 @@ if (! class_exists('PT_Fieldtype'))
 
 
 /**
- * PT Checkboxes Class
+ * P&T Checkboxes Class
  *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
@@ -17,7 +17,7 @@ if (! class_exists('PT_Fieldtype'))
 class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 
 	var $info = array(
-		'name'     => 'PT Checkboxes',
+		'name'     => 'P&amp;T Checkboxes',
 		'version'  => PT_FIELD_PACK_VER
 	);
 
