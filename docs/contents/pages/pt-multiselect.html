@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>P&amp;T Field Pack Docs - P&amp;T Multiselect</title>
+	<meta name="author" content="Pixel &amp; Tonic, Inc." />
+	<meta name="viewport" content="width=1000" />
+	<link rel="stylesheet" type="text/css" href="../styles/docs.css" />
+</head>
+
+<body class="page">
+<div id="page">
+
+	<h1>P&amp;T Multiselect</h1>
+
+	<section>
+		<h2>Configuration</h2>
+		<p>P&amp;T Multiselect has one setting, “Multiselect Options”, a single textarea in which you specify each option you want as part of the multi-select.</p>
+
+		<p>List one option per line:</p>
+		<pre><code>Herbie Hancock
+Miles Davis
+The Beatles
+Bob Dylan</code></pre>
+
+		<p>You can optionally specify input values for each option, and organize options into <code>optgroup</code>s:</p>
+		<pre><code>Jazz
+    herbie : Herbie Hancock
+    miles : Miles Davis
+Rock
+    beatles : The Beatles
+    bobby : Bob Dylan</code></pre>
+	</section>
+
+	<section>
+		<h2>Templates</h2>
+
+		<h3>Tag Parameters</h3>
+		<p>The following parameters can be added to P&amp;T Multiselect’s primary tag pair, <code>:all_options</code>, <code>:ol</code>, and <code>:ul</code> tags:</p>
+
+		<dd>
+			<dt><code>sort="asc|desc"</code></dt>
+			<dd>Sort the options in ascending or descending order</dd>
+
+			<dt><code>backspace=</code></dt>
+			<dd>Strip the last <em>X</em> characters from the tag output</dd>
+		</dd>
+
+		<h3>Primary Tag Pair</h3>
+		<p>Calling your P&amp;T Multiselect field with a tag pair allows you to fully customize the output:</p>
+		<pre><code>&lt;p&gt;I like <em>{favorite_things backspace="2"}</em>{option}, <em>{/favorite_things}</em>.&lt;/p&gt;</code></pre>
+
+		<h4>Single Variable Tags</h4>
+		<p>The following single variables are available within your tag pair:</p>
+
+		<dd>
+			<dt><code>{count}</code></dt>
+			<dd>The current option’s index</dd>
+
+			<dt><code>{option}</code></dt>
+			<dd>The current option</dd>
+
+			<dt><code>{option_name}</code></dt>
+			<dd>If you specified a name for your option, this is how you access it. Otherwise, it will return the same thing as <code>{option}</code>.</dd>
+
+			<dt><code>switch</code></dt>
+			<dd>Switch between multiple values based on the current option index</dd>
+		</dd>
+
+		<h3><code>:all_options</code> Tag Pair</h3>
+		<p>If you want to loop through each of your options, regardless of whether or not they’re selected, use this tag.</p>
+		<pre><code>{favorite_things<em>:all_options</em>}
+  &lt;p&gt;I {if {selected} == ""}don’t{/if} like {option}.&lt;/p&gt;
+{/favorite_things<em>:all_options</em>}</code></pre>
+
+		<h4>Single Variable Tags</h4>
+		<p>The <code>:all_options</code> tag pair supports each of the primary tag pair’s single variable tags, plus one more:</p>
+
+		<dd>
+			<dt><code>{selected}</code></dt>
+			<dd>For use in conditionals; returns whether or not the current option is selected</dd>
+		</dd>
+
+		<h3><code>:ol</code> and <code>:ul</code> Tags</h3>
+		<p>Returns an ordered/unordered list of each of your selected options</p>
+		<pre><code>&lt;h3&gt;My favorite things:&lt;/h3&gt;
+{favorite_things<em>:ul</em> sort="asc"}</code></pre>
+
+		<h3><code>:selected</code> Tag</h3>
+		<p>For use in conditionals; returns whether or not a particular option is selected.</p>
+		<pre><code>{if {favorite_things<em>:selected option="kittens"</em>}}
+  &lt;p&gt;Kittens!!!&lt;/p&gt;
+{/if}</code></pre>
+	</section>
+
+</div>
+</body>
+</html>
