@@ -9,7 +9,7 @@ var ee_affiliate_name = 'brandonkelly',
 	external_re = new RegExp('^https?://'),
 	external_ee_re = new RegExp('^(https?://(secure\\.|www\\.)?expressionengine.com\\/)([^#]*)(#(\\w+))?$'),
 	ee_affiliate_re = new RegExp('^index\\.php\\?affiliate='+ee_affiliate_name),
-	relative_img_re = new RegExp('/(Contents/images/.*)$'),
+	relative_img_re = new RegExp('/\\.\\./Images/(.*)$'),
 	url_title_re = new RegExp('([\\w-]+)\.html'),
 	titlePrefix = document.title,
 	$nav = $('#nav'),
@@ -39,7 +39,7 @@ var selectLink = function($link, updateHash){
 			var match = this.src.match(relative_img_re);
 
 			if (match) {
-				this.src = match[1];
+				this.src = 'Contents/Local/Images/'+match[1];
 			}
 		});
 
@@ -58,11 +58,6 @@ var selectLink = function($link, updateHash){
 					          + (match[3] ? '&page=/'+match[3] : '')
 					          + (match[5] ? '&anchor='+match[5] : '');
 				}
-
-				// track outbound links
-				$(this).click(function(){
-					pageTracker._trackPageview('/Outbound/'+href);
-				});
 			}
 		});
 	});
