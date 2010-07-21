@@ -310,7 +310,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 
 		if (! $tagdata)
 		{
-			return $this->ul($data, $params);
+			return $this->replace_ul($data, $params);
 		}
 
 		$this->prep_field_data($data);
@@ -395,7 +395,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 		if (! $tagdata)
 		{
 			return "<ul>\n"
-			     .   $this->all_options($data, $params, "  <li>{option}</li>\n")
+			     .   $this->replace_all_options($data, $params, "  <li>{option}</li>\n")
 			     . "</ul>";
 		}
 
@@ -434,7 +434,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 				if (is_array($option))
 				{
 					$sub_params = array_merge($params, array('backspace' => '0'));
-					$r .= $this->all_options($data, $sub_params, $tagdata, $option, $this->_iterator_count);
+					$r .= $this->replace_all_options($data, $sub_params, $tagdata, $option, $this->_iterator_count);
 				}
 				else
 				{
