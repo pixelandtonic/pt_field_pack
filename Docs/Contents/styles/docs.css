@@ -33,8 +33,9 @@ body#docs { height: 100%; }
 
 /*-- sidebar --*/
 #sidebar { position: fixed; top: 40px; right: 40px; width: 210px; color: #999; }
-#sidebar ul li { margin-top: 6px; font-weight: bold; }
-#sidebar ul li a { font-weight: normal; }
+#sidebar h1 { font-size: 1.2em; font-weight: bold; text-shadow: 0 1px #fff; }
+#sidebar ul li { margin-top: 6px; font-weight: bold; text-shadow: 0 1px #fff; }
+#sidebar ul li a { font-weight: normal; text-shadow: none; }
 #sidebar ul li a.selected { color: #4d3900; text-shadow: 1px 1px 1px rgba(0,0,0,0.15); cursor: default; }
 #sidebar ul ul { margin: 0 0 10px 20px; }
 #sidebar p { margin-top: 30px; }
