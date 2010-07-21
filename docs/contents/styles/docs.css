@@ -29,7 +29,6 @@ body#docs { height: 100%; }
 #content { margin-right: 290px; border-right: 1px solid #ddd; min-height: 100%; background: #fff; overflow-x: auto; }
 #page { padding: 40px; position: relative; z-index: 1; }
 #pt { display: block; position: fixed; right: 25px; bottom: 15px; width: 42px; height: 33px; }
-#pt:hover { opacity: 1; }
 
 
 /*-- sidebar --*/
