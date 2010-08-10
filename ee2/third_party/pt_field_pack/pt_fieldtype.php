@@ -231,6 +231,9 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	{
 		$post = $this->EE->input->post($this->class.'_options');
 
+		// replace quotes
+		$post = str_replace('"', '&quot;', $post);
+
 		return array(
 			'options' => $this->save_options_setting($post, $this->total_option_levels)
 		);
@@ -241,6 +244,9 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	 */
 	function save_cell_settings($settings)
 	{
+		// replace quotes
+		$settings['options'] = str_replace('"', '&quot;', $settings['options']);
+
 		$settings['options'] = $this->save_options_setting($settings['options'], $this->total_option_levels);
 		return $settings;
 	}
@@ -276,6 +282,26 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	function display_cell($data)
 	{
 		return $this->_display_field($data, $this->cell_name);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Save
+	 */
+	function save($data)
+	{
+		// replace quotes
+		return str_replace('"', '&quot;', $data);
+	}
+
+	/**
+	 * Save Cell
+	 */
+	function save_cell($data)
+	{
+		// replace quotes
+		return $this->save($data);
 	}
 
 	// --------------------------------------------------------------------

@@ -64,7 +64,8 @@ class Pt_multiselect_ft extends PT_Multi_Fieldtype {
 	 */
 	function save($data)
 	{
-		return $data == 'n' ? '' : implode("\n", $data);
+		$data = $data == 'n' ? '' : implode("\n", $data);
+		return parent::save($data);
 	}
 
 	/**
