@@ -42,7 +42,7 @@ class PT_Fieldtype extends EE_Fieldtype {
 			// is this just a blank option?
 			if (! $name && ! $label) $name = $label = ' ';
 
-			$r .= $indent.$name;
+			$r .= $indent . htmlentities($name);
 
 			// is this an optgroup?
 			if (is_array($label)) $r .= "\n".$this->options_setting($label, $indent.'    ');
