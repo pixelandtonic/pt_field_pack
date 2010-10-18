@@ -273,6 +273,8 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	 */
 	function display_field($data)
 	{
+		$data = html_entity_decode($data);
+
 		return $this->_display_field($data, $this->field_name);
 	}
 
