@@ -361,6 +361,14 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 				}
 			}
 
+			// offset and limit
+			if (isset($params['offset']) || isset($params['limit']))
+			{
+				$offset = isset($params['offset']) ? $params['offset'] : 0;
+				$limit = isset($params['limit']) ? $params['limit'] : count($data);
+				$data = array_splice($data, $offset, $limit);
+			}
+
 			// prepare for {switch} and {count} tags
 			$this->prep_iterators($tagdata);
 
