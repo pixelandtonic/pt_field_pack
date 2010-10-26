@@ -101,7 +101,7 @@ class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 			{
 				return $sublabel;
 			}
-			else if ($data === $name)
+			else if ((string) $data === (string) $name)
 			{
 				return $label;
 			}
