@@ -273,7 +273,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	 */
 	function display_field($data)
 	{
-		$data = html_entity_decode($data);
+		if (is_string($data)) $data = html_entity_decode($data);
 
 		return $this->_display_field($data, $this->field_name);
 	}
@@ -359,6 +359,14 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 				{
 					rsort($data);
 				}
+			}
+
+			// offset and limit
+			if (isset($params['offset']) || isset($params['limit']))
+			{
+				$offset = isset($params['offset']) ? $params['offset'] : 0;
+				$limit = isset($params['limit']) ? $params['limit'] : count($data);
+				$data = array_splice($data, $offset, $limit);
 			}
 
 			// prepare for {switch} and {count} tags
