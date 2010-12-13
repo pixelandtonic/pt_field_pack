@@ -502,4 +502,14 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 		return (isset($params['option']) AND in_array($params['option'], $data)) ? 1 : 0;
 	}
 
+	/**
+	 * Total Selections
+	 */
+	function replace_total_selections($data, $params = array())
+	{
+		$this->prep_field_data($data);
+
+		return $field_data ? (string) count($data) : '0';
+	}
+
 }
