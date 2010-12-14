@@ -27,15 +27,15 @@ html { background: #eee; height: 100%; }
 body { font-family: sans-serif; font-size: 13px; line-height: 1.4; min-height: 100%; }
 body.page { background: #fff; }
 
-body#docs { height: 100%; }
-#content { margin-right: 290px; border-right: 1px solid #ddd; min-height: 100%; background: #fff; overflow-x: auto; }
+body#docs { height: 100%; padding-right: 300px; overflow: hidden; }
+#content { display: block; border: none; border-right: 1px solid #ddd; width: 100%; height: 100%; background: #fff; }
 #page { padding: 40px; position: relative; z-index: 1; }
 #pt { display: block; position: fixed; right: 25px; bottom: 15px; width: 42px; height: 33px; }
 
 
 /*-- sidebar --*/
-#sidebar { position: fixed; top: 40px; right: 40px; width: 210px; color: #999; }
-#sidebar h1 { font-size: 1.2em; font-weight: bold; text-shadow: 0 1px #fff; }
+#sidebar { position: fixed; top: 0; right: 0; padding: 0 40px; width: 220px; max-height: 100%; color: #999; overflow-y: auto; }
+#sidebar h1 { padding-top: 40px; font-size: 1.2em; font-weight: bold; text-shadow: 0 1px #fff; }
 #sidebar ul li { margin-top: 6px; font-weight: bold; text-shadow: 0 1px #fff; }
 #sidebar ul li a { font-weight: normal; text-shadow: none; }
 #sidebar ul li a.selected { color: #4d3900; text-shadow: 1px 1px 1px rgba(0,0,0,0.15); cursor: default; }
@@ -104,6 +104,14 @@ body#docs { height: 100%; }
 #page kbd { font-family: inherit; color: #68801a; white-space: nowrap; font-family: Menlo, Monaco, monospace; line-height: 1; font-size: 0.9em; }
 
 /* notes */
-#page .note { margin: 2em 0 0; border: 1px solid #ffe599; padding: 10px 12px; background: #fffdd3; }
+#page .note { border: 1px solid #ffe599; padding: 10px 12px; background: #fffdd3; }
 #page .note h5 { margin-top: 0; }
 #page .note p { margin-bottom: 0; }
+
+/* tables */
+#page table { margin: 1em 0 1em 30px; }
+#page table th, #page table td { padding: 0.5em 10px; border-top: 1px solid #eee; text-align: left; vertical-align: top; }
+#page table thead th, #page table thead td { border-top: none; }
+#page table th { white-space: nowrap; }
+#page table tbody th { color: #87a621; }
+#page table thead th { color: #4d3900; }
