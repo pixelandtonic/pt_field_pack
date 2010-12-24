@@ -35,18 +35,28 @@ class PT_Fieldtype extends EE_Fieldtype {
 	{
 		$r = '';
 
-		foreach($options as $name => $label)
+		foreach ($options as $name => $label)
 		{
 			if ($r !== '') $r .= "\n";
 
+			// force strings
+			$name = (string) $name;
+			$label = (string) $label;
+
 			// is this just a blank option?
-			if (! $name && ! $label) $name = $label = ' ';
+			if ($name === '' && $label === '') $name = $label = ' ';
 
 			$r .= $indent . htmlentities($name);
 
 			// is this an optgroup?
-			if (is_array($label)) $r .= "\n".$this->options_setting($label, $indent.'    ');
-			else if ($name != $label) $r .= ' : '.$label;
+			if (is_array($label))
+			{
+				$r .= "\n".$this->options_setting($label, $indent.'    ');
+			}
+			else if ($name !== $label)
+			{
+				$r .= ' : '.$label;
+			}
 		}
 
 		return $r;
