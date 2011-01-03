@@ -14,7 +14,7 @@ if (! defined('PT_FIELD_PACK_VER'))
  *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
- * @copyright Copyright (c) 2010 Pixel & Tonic, LLC
+ * @copyright Copyright (c) 2011 Pixel & Tonic, Inc
  */
 class Pt_field_pack_ext {
 

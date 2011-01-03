@@ -12,7 +12,7 @@ if (! class_exists('PT_Fieldtype'))
  *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
- * @copyright Copyright (c) 2010 Pixel & Tonic, LLC
+ * @copyright Copyright (c) 2011 Pixel & Tonic, Inc
  */
 class Pt_radio_buttons_ft extends PT_Multi_Fieldtype {
 
