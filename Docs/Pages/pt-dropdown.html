@@ -2,37 +2,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<title>P&amp;T Field Pack Docs - P&amp;T Radio Buttons</title>
+	<title>P&amp;T Field Pack Docs - P&amp;T Dropdown</title>
 	<meta name="author" content="Pixel &amp; Tonic, Inc." />
 	<meta name="viewport" content="width=1000" />
-	<link rel="stylesheet" type="text/css" href="../../Shared/Styles/docs.css" />
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/docs.css" />
 </head>
 
 <body class="page">
 <div id="page">
 
-	<h1>P&amp;T Radio Buttons</h1>
+	<h1>P&amp;T Dropdown</h1>
 
 	<section>
 		<h2>Configuration</h2>
-		<p>P&amp;T Radio Buttons has one setting, “Radio Button Options”, a single textarea in which you specify each radio option you want as part of the group.</p>
+		<p>P&amp;T Dropdown has one setting, “Dropdown Options”, a single textarea in which you specify your select’s options.</p>
 
 		<p>List one option per line:</p>
 		<pre><code>Herbie Hancock
-Bob Dylan
-The Bad Plus</code></pre>
+Miles Davis
+The Beatles
+Bob Dylan</code></pre>
 
-		<p>You can optionally specify each option’s value separately from its label:</p>
-		<pre><code>herbie : Herbie Hancock
-bobby : Bob Dylan
-tbp : The Bad Plus</code></pre>
+		<p>You can optionally specify input values for each option, and organize options into <code>optgroup</code>s:</p>
+		<pre><code>Jazz
+    herbie : Herbie Hancock
+    miles : Miles Davis
+Rock
+    beatles : The Beatles
+    bobby : Bob Dylan</code></pre>
+
+		<p>You can also create a blank option by adding a blank line at the top. Or give the blank option a label:</p>
+		<pre><code> : Select one...</code></pre>
+		<p><em>(Note there’s a space before the colon.)</em></p>
 	</section>
 
 	<section>
 		<h2>Templates</h2>
-
 		<h3>Primary Tag</h3>
-		<p>Calling your P&amp;T Radio Buttons field with a single tag returns the selected option’s value:</p>
+
+		<p>Calling your P&amp;T Dropdown field with a single tag returns the selected option’s value:</p>
 		<pre><code>&lt;p&gt;I really like <em>{favorite_thing}</em>.&lt;/p&gt;</code></pre>
 
 		<h3><code>:label</code> Tag</h3>
@@ -46,7 +54,7 @@ tbp : The Bad Plus</code></pre>
 {/favorite_thing<em>:all_options</em>}</code></pre>
 
 		<h4>Tag Parameters</h4>
-		<p>The following tag parameters can be added to P&amp;T Radio Buttons’s <code>:all_options</code> tag:</p>
+		<p>The following tag parameters can be added to P&amp;T Dropdown’s <code>:all_options</code> tag:</p>
 
 		<dl>
 			<dt><code>sort="asc|desc"</code></dt>
@@ -69,7 +77,7 @@ tbp : The Bad Plus</code></pre>
 			<dt><code>{count}</code></dt>
 			<dd>The current option’s index</dd>
 
-			<dt><code>switch</code></dt>
+			<dt><code>{switch}</code></dt>
 			<dd>Switch between multiple values based on the current option index</dd>
 
 			<dt><code>{selected}</code></dt>
@@ -78,7 +86,7 @@ tbp : The Bad Plus</code></pre>
 	</section>
 
 </div>
-<script type="text/javascript" src="../../Shared/Scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="../../Shared/Scripts/page.js"></script>
+<script type="text/javascript" src="../Resources/Scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="../Resources/Scripts/page.js"></script>
 </body>
 </html>
