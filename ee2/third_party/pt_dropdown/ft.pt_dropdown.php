@@ -22,7 +22,6 @@ class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 	);
 
 	var $class = 'pt_dropdown';
-
 	var $total_option_levels = 2;
 
 	// --------------------------------------------------------------------

@@ -22,7 +22,6 @@ class Pt_multiselect_ft extends PT_Multi_Fieldtype {
 	);
 
 	var $class = 'pt_multiselect';
-
 	var $total_option_levels = 2;
 
 	// --------------------------------------------------------------------

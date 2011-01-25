@@ -18,6 +18,8 @@ if (! defined('PT_FIELD_PACK_VER'))
  */
 class PT_Fieldtype extends EE_Fieldtype {
 
+	var $has_array_data = TRUE;
+
 	/**
 	 * PT_Fieldtype Constructor
 	 */
