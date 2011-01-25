@@ -36,6 +36,8 @@ class Pt_radio_buttons_ft extends PT_Multi_Fieldtype {
 		}
 
 		new FF2EE2(array('ff_radio_group', 'pt_radio_buttons'));
+
+		return array();
 	}
 
 	// --------------------------------------------------------------------

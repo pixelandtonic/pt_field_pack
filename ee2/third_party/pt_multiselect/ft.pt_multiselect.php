@@ -37,6 +37,8 @@ class Pt_multiselect_ft extends PT_Multi_Fieldtype {
 		}
 
 		new FF2EE2(array('ff_multiselect', 'pt_multiselect'));
+
+		return array();
 	}
 
 	// --------------------------------------------------------------------

@@ -37,6 +37,8 @@ class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 		}
 
 		new FF2EE2(array('ff_select', 'pt_dropdown'));
+
+		return array();
 	}
 
 	// --------------------------------------------------------------------
