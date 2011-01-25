@@ -37,6 +37,8 @@ class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 
 		new FF2EE2(array('ff_checkbox_group', 'pt_checkboxes'));
 		new FF2EE2(array('ff_checkbox', 'pt_checkboxes'), array(&$this, '_convert_checkbox_settings'));
+
+		return array();
 	}
 
 	/**
