@@ -18,6 +18,8 @@ if (! defined('PT_FIELD_PACK_VER'))
  */
 class PT_Fieldtype extends EE_Fieldtype {
 
+	var $unserialize_data = FALSE;
+
 	var $has_array_data = TRUE;
 
 	/**
@@ -274,6 +276,18 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	{
 		if (! is_array($data))
 		{
+			if ($this->unserialize_data)
+			{
+				if (! class_exists('FF2EE2'))
+				{
+					require PATH_THIRD.'pt_field_pack/ff2ee2/ff2ee2.php';
+				}
+
+				$data = FF2EE2::_unserialize($data);
+
+				if (is_array($data)) return;
+			}
+
 			$data = array_filter(preg_split("/[\r\n]+/", $data));
 		}
 	}
