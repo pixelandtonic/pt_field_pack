@@ -70,7 +70,7 @@ Rock
 		<h3><code>:all_options</code> Tag Pair</h3>
 		<p>If you want to loop through each of your options, regardless of whether or not they’re selected, use this tag.</p>
 		<pre><code>{favorite_things<em>:all_options</em>}
-  &lt;p&gt;I {if {selected} == ""}don’t{/if} like {option}.&lt;/p&gt;
+  &lt;p&gt;I {if "{selected}" == ""}don’t{/if} like {option}.&lt;/p&gt;
 {/favorite_things<em>:all_options</em>}</code></pre>
 
 		<h4>Single Variable Tags</h4>
@@ -94,6 +94,7 @@ Rock
 
 		<h3><code>:total_selections</code> Tag</h3>
 		<p>Returns the total number of selected options.</p>
+		<pre><code>I have {favorite_things<em>:total_selections</em>} favorites.</code></pre>
 
 	</section>
 
