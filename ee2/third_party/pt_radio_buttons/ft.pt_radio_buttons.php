@@ -95,7 +95,7 @@ class Pt_radio_buttons_ft extends PT_Multi_Fieldtype {
 	 */
 	function replace_label($data)
 	{
-		$this->prep_field_data($field_data);
+		$this->prep_field_data($data);
 
 		return $this->settings['options'][$data];
 	}

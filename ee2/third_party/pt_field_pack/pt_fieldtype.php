@@ -270,7 +270,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	/**
 	 * Prep Field Data
 	 *
-	 * Ensures $field_data is an array.
+	 * Ensures $data is an array.
 	 */
 	function prep_field_data(&$data)
 	{
@@ -543,7 +543,7 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 	{
 		$this->prep_field_data($data);
 
-		return $field_data ? (string) count($data) : '0';
+		return $data ? (string) count($data) : '0';
 	}
 
 }
