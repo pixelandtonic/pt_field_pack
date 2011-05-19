@@ -27,7 +27,7 @@ class PT_Fieldtype extends EE_Fieldtype {
 	 */
 	function PT_Fieldtype()
 	{
-		parent::EE_Fieldtype();
+		parent::__construct();
 	}
 
 	// --------------------------------------------------------------------
