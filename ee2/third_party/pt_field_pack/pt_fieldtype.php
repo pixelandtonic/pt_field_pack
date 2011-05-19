@@ -50,7 +50,7 @@ class PT_Fieldtype extends EE_Fieldtype {
 			// is this just a blank option?
 			if ($name === '' && $label === '') $name = $label = ' ';
 
-			$r .= $indent . htmlentities($name);
+			$r .= $indent . htmlentities($name, ENT_COMPAT, 'UTF-8');
 
 			// is this an optgroup?
 			if (is_array($label))
