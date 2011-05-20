@@ -98,7 +98,7 @@ class Pt_dropdown_ft extends PT_Multi_Fieldtype {
 	{
 		foreach($options as $name => $label)
 		{
-			if (is_array($label) && ($sublabel = $this->find_label($data, $label)) !== FALSE)
+			if (is_array($label) && ($sublabel = $this->_find_label($data, $label)) !== FALSE)
 			{
 				return $sublabel;
 			}
