@@ -94,7 +94,7 @@ class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 	 */
 	function save($data)
 	{
-		$data = $data == 'n' ? '' : implode("\n", $data);
+		$data = is_array($data) ? implode("\n", $data) : '';
 		return parent::save($data);
 	}
 
