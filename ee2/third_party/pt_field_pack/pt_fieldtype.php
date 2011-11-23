@@ -43,9 +43,8 @@ class PT_Fieldtype extends EE_Fieldtype {
 		{
 			if ($r !== '') $r .= "\n";
 
-			// force strings
+			// force string
 			$name = (string) $name;
-			$label = (string) $label;
 
 			// is this just a blank option?
 			if ($name === '' && $label === '') $name = $label = ' ';
@@ -57,7 +56,7 @@ class PT_Fieldtype extends EE_Fieldtype {
 			{
 				$r .= "\n".$this->options_setting($label, $indent.'    ');
 			}
-			else if ($name !== $label)
+			else if ($name !== (string) $label)
 			{
 				$r .= ' : '.$label;
 			}
