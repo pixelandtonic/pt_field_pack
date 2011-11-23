@@ -116,6 +116,44 @@ class PT_Fieldtype extends EE_Fieldtype {
 	// --------------------------------------------------------------------
 
 	/**
+	 * Validate
+	 */
+	function validate($data)
+	{
+		// is this a required field?
+		if ($this->settings['field_required'] == 'y')
+		{
+			// make sure there are selections
+			if (! $data)
+			{
+				return lang('required');
+			}
+		}
+
+		return TRUE;
+	}
+
+	/**
+	 * Validate Cell
+	 */
+	function validate_cell($data)
+	{
+		// is this a required cell?
+		if ($this->settings['col_required'] == 'y')
+		{
+			// make sure there are selections
+			if (! $data)
+			{
+				return lang('col_required');
+			}
+		}
+
+		return TRUE;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
 	 * Prep Iterators
 	 */
 	function prep_iterators(&$tagdata)
