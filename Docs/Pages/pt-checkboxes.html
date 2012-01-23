@@ -31,8 +31,9 @@ tbp : The Bad Plus</code></pre>
 	<section>
 		<h2>Templates</h2>
 
+
 		<h3>Tag Parameters</h3>
-		<p>The following parameters can be added to P&amp;T Checkboxes’s primary tag pair, <code>:all_options</code>, <code>:ol</code>, and <code>:ul</code> tags:</p>
+		<p>The following parameters can be added to P&amp;T Checkboxes’s primary tag pair, <code>:ol</code>, and <code>:ul</code> tags:</p>
 
 		<dl>
 			<dt><code>sort="asc|desc"</code></dt>
@@ -41,6 +42,7 @@ tbp : The Bad Plus</code></pre>
 			<dt><code>backspace=</code></dt>
 			<dd>Strip the last <em>X</em> characters from the tag output</dd>
 		</dl>
+
 
 		<h3>Primary Tag Pair</h3>
 		<p>Calling your P&amp;T Checkboxes field with a tag pair allows you to fully customize the output:</p>
@@ -63,26 +65,12 @@ tbp : The Bad Plus</code></pre>
 			<dd>Switch between multiple values based on the current option index</dd>
 		</dl>
 
-		<h3><code>:all_options</code> Tag Pair</h3>
-		<p>If you want to loop through each of your options, regardless of whether or not they’re selected, use this tag.</p>
-		<pre><code>All things: {favorite_things<em>:all_options</em> backspace="2"}{option}, {/favorite_things<em>:all_options</em>}</code></pre>
-
-		<h4>Single Variable Tags</h4>
-		<p>The <code>:all_options</code> tag pair supports each of the primary tag pair’s single variable tags, plus one more:</p>
-
-		<dl>
-			<dt><code>{selected}</code></dt>
-			<dd>For use in conditionals; returns whether or not the current option is selected
-				<pre><code>{favorite_things:all_options}
-  &lt;p&gt;I {if "<em>{selected}</em>" == ""}don’t{/if} like {option}.&lt;/p&gt;
-{/favorite_things:all_options}</code></pre>
-			</dd>
-		</dl>
 
 		<h3><code>:ol</code> and <code>:ul</code> Tags</h3>
 		<p>Returns an ordered/unordered list of each of your selected options</p>
 		<pre><code>&lt;h3&gt;My favorite things:&lt;/h3&gt;
 {favorite_things<em>:ul</em> sort="asc"}</code></pre>
+
 
 		<h3><code>:selected</code> Tag</h3>
 		<p>For use in conditionals; returns whether or not a particular option is selected.</p>
@@ -90,10 +78,10 @@ tbp : The Bad Plus</code></pre>
   &lt;p&gt;Kittens!!!&lt;/p&gt;
 {/if}</code></pre>
 
+
 		<h3><code>:total_selections</code> Tag</h3>
 		<p>Returns the total number of selected options.</p>
 		<pre><code>I have {favorite_things<em>:total_selections</em>} favorites.</code></pre>
-
 	</section>
 
 </div>
