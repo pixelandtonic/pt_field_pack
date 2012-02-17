@@ -432,6 +432,9 @@ class PT_Multi_Fieldtype extends PT_Fieldtype {
 				$data = array_splice($data, $offset, $limit);
 			}
 
+			// parse {total_selections} up front
+			$tagdata = $this->EE->TMPL->swap_var_single('total_selections', (string)count($data), $tagdata);
+
 			// prepare for {switch} and {count} tags
 			$this->prep_iterators($tagdata);
 
