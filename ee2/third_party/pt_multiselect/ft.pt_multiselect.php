@@ -61,6 +61,19 @@ class Pt_multiselect_ft extends PT_Multi_Fieldtype {
 	// --------------------------------------------------------------------
 
 	/**
+	 * Validate Field
+	 */
+	function validate($data)
+	{
+		if ($this->settings['field_required'] == 'y' && $data =='n' )
+		{
+			return $this->EE->lang->line('required');
+		}
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
 	 * Save Field
 	 */
 	function save($data)
