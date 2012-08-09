@@ -35,7 +35,6 @@ Rock
 	<section>
 		<h2>Templates</h2>
 
-
 		<h3>Tag Parameters</h3>
 		<p>The following parameters can be added to P&amp;T Multiselect’s primary tag pair, <code>:ol</code>, and <code>:ul</code> tags:</p>
 
@@ -46,7 +45,6 @@ Rock
 			<dt><code>backspace=</code></dt>
 			<dd>Strip the last <em>X</em> characters from the tag output</dd>
 		</dl>
-
 
 		<h3>Primary Tag Pair</h3>
 		<p>Calling your P&amp;T Multiselect field with a tag pair allows you to fully customize the output:</p>
@@ -65,23 +63,20 @@ Rock
 			<dt><code>{option_name}</code></dt>
 			<dd>If you specified a name for your option, this is how you access it. Otherwise, it will return the same thing as <code>{option}</code>.</dd>
 
-			<dt><code>{switch="one|two|three"}</code></dt>
+			<dt><code>switch</code></dt>
 			<dd>Switch between multiple values based on the current option index</dd>
 		</dl>
-
 
 		<h3><code>:ol</code> and <code>:ul</code> Tags</h3>
 		<p>Returns an ordered/unordered list of each of your selected options</p>
 		<pre><code>&lt;h3&gt;My favorite things:&lt;/h3&gt;
 {favorite_things<em>:ul</em> sort="asc"}</code></pre>
 
-
 		<h3><code>:selected</code> Tag</h3>
 		<p>For use in conditionals; returns whether or not a particular option is selected.</p>
-		<pre><code>{if "{favorite_things<em>:selected option="kittens"</em>}"}
+		<pre><code>{if {favorite_things<em>:selected option="kittens"</em>}}
   &lt;p&gt;Kittens!!!&lt;/p&gt;
 {/if}</code></pre>
-
 
 		<h3><code>:total_selections</code> Tag</h3>
 		<p>Returns the total number of selected options.</p>
