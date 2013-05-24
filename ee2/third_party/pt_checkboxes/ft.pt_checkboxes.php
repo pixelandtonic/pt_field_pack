@@ -74,15 +74,17 @@ class Pt_checkboxes_ft extends PT_Multi_Fieldtype {
 		$this->prep_field_data($data);
 		$r = form_hidden($field_name, 'n');
 
+		$field_id = str_replace(array('[', ']'), array('_', '_'), $field_name);
+
 		foreach($this->settings['options'] as $option_name => $option_label)
 		{
 			$field_data = array(
 				'name'        => $field_name.'[]',
-				'id'          => $option_name,
+				'id'          => $field_id.'_'.$option_name,
 				'value'       => $option_name,
 				'checked'     => in_array($option_name, $data) ? 1 : 0
 			);
-			
+
 			$r .= '<label for="' . $field_data['id'] . '">'
 			    .   form_checkbox($field_data)
 			    .   NBS . $option_label
