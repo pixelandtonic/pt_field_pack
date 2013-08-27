@@ -16,7 +16,7 @@ if (! defined('PT_FIELD_PACK_VER'))
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
  * @copyright Copyright (c) 2011 Pixel & Tonic, Inc
  */
-class PT_Fieldtype extends EE_Fieldtype {
+abstract class PT_Fieldtype extends EE_Fieldtype {
 
 	var $unserialize_data = FALSE;
 
@@ -204,7 +204,7 @@ class PT_Fieldtype extends EE_Fieldtype {
 
 /**
  * P&T Multi Fieldtype Base Class
- * 
+ *
  * @package   P&T Field Pack
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
  * @copyright Copyright (c) 2011 Pixel & Tonic, Inc
